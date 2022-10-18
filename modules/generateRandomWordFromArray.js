@@ -3,3 +3,4 @@ const arrayOfRandomWord = ['яблоко', 'телефон', 'программи
 function randomWord (){
     return (Math.random() * (arrayOfRandomWord.length -1));
 }
+export default randomWord;
