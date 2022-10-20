@@ -27,7 +27,7 @@
     padding: 30px;
 }
 
-#close{
+#buttonClose{
     position: absolute;
     right: 5px;
     top: 5px;
@@ -35,7 +35,7 @@
     color: #fff;
     padding: 5px;
 }
-#close:hover{
+#buttonClose:hover{
     cursor: pointer;
     background-color: rgb(109, 40, 40);
 }
