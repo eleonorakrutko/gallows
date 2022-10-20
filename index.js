@@ -21,6 +21,6 @@ renderEmptyBlocks(splitWord(randomWordFromArr), arrEmptyBlocks);
 
 const objOfMistakes = {mistake: 0}
 
-send.addEventListener('click',findLetterAndRender(splitWord(randomWordFromArr), validateEnterValue(input),arrEmptyBlocks));
+send.addEventListener('click',findLetterAndRender(splitWord(randomWordFromArr), validateEnterValue(input),arrEmptyBlocks, arrOfImgs, objOfMistakes, randomWordFromArr));
 
 
