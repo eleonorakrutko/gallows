@@ -1,7 +1,7 @@
 
-function splitWord (word){
+function splitWord(word){
     const arrForWord = word.split('');
     return arrForWord;
 }
 
-export default splitWord;
+export default splitWord
