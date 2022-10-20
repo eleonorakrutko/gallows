@@ -1,27 +1,26 @@
-import startGame from "./modules/startGame.js";
 import restart from "./modules/restartGame.js";
-import { renderEmptyBlocks } from "./modules/renderEmptyBlocks.js";
+import splitWord from "./modules/splitWord.js";
+import renderEmptyBlocks from "./modules/renderEmptyBlocks.js";
+import startGame from "./modules/startGame.js";
 import validateEnterValue from "./modules/validateEnterUser.js";
-import randomWord from "./modules/generateRandomWordFromArray.js";
-
+import findLetterAndRender from "./modules/findLetterAndRender.js";
+import randomWord from './modules/generateRandomWordFromArray.js'
 
 const restartButton = document.getElementById('restartButton');
-restartButton.addEventListener('click', restart)
-
 const input = document.getElementById('input');
-const sendButton = document.getElementById('send')
+const send = document.getElementById('send');
 
+restartButton.addEventListener('click', restart)
 
 const arrOfImgs = startGame();
 
 const randomWordFromArr = randomWord();
 
 const arrEmptyBlocks = [];
-renderEmptyBlocks(arrEmptyBlocks);
+renderEmptyBlocks(splitWord(randomWordFromArr), arrEmptyBlocks);
 
-const objMistake = {
-    mistake: 0,
-}
+const objOfMistakes = {mistake: 0}
+
+send.addEventListener('click',findLetterAndRender(splitWord(randomWordFromArr), validateEnterValue(input),arrEmptyBlocks, arrOfImgs, objOfMistakes, randomWordFromArr));
 
 
-sendButton.addEventListener('click', validateEnterValue(input))
