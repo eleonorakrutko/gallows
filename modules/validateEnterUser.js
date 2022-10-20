@@ -1,11 +1,11 @@
 const blackList = [];
 
-function validateEntertValue (enterLetter){
+function validateEnterValue (enterLetter){
     return function(){
         let letter = enterLetter.value.toLowerCase();
         if((letter.match(/[а-яё]/))){
             if (blackList.includes(letter)) {
-                alert('Вы уже вводили этот символ!')
+                alert('Вы уже вводили этот символ!');
                 enterLetter.value = null;
                 return null;        
             }
@@ -13,11 +13,11 @@ function validateEntertValue (enterLetter){
             enterLetter.value = null;
             return letter;
         } else {
-            alert('Введите корректное значение!')
+            alert('Введите корректное значение!');
             enterLetter.value = null;
-            return null
+            return null;
         }
     }
 }
 
-export default validateEntertValue;
+export default validateEnterValue;
