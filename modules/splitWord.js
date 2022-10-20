@@ -1,7 +1,7 @@
-import randomWord from "./generateRandomWordFromArray.js";
 
-function splitWord (){
-    return randomWord().split('');
+function splitWord (word){
+    const arrForWord = word.split('');
+    return arrForWord;
 }
 
 export default splitWord;
