@@ -3,7 +3,9 @@ function changePictureWhenMistake(arrImgs, objMistakes, rightWord){
     arrImgs[objMistakes.mistake].deletePicture();
     objMistakes.mistake++
     arrImgs[objMistakes.mistake].addPicture();
-    loose(objMistakes, rightWord)
+    if(objMistakes.mistake === 3){
+        loose(rightWord)
+    }
 }
 
 export default changePictureWhenMistake
