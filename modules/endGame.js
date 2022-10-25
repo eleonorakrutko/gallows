@@ -1,3 +1,5 @@
+import restart from "./restartGame.js";
+
 const closeButton = document.getElementById('buttonClose');
 const modal = document.getElementById('modal');
 const modalContent = document.getElementById('modalContent');
@@ -5,9 +7,10 @@ const modalContent = document.getElementById('modalContent');
 function showModalWindow(){
     modal.style.display = 'block';
     closeButton.addEventListener('click', () => {
-    modal.style.display = 'none';
+        modal.style.display = 'none';
+        restart();
     })
-    return modalContent
+    return modalContent;
 }
 
 function loose(rightWord) {
@@ -15,8 +18,8 @@ function loose(rightWord) {
         const loose = showModalWindow();
         const h2 = document.createElement('h2');
         h2.innerText = `Вы проиграли. Правильное слово - ${rightWord}`;
-        loose.append(h2)
-    }, 1000) 
+        loose.append(h2);
+    }, 1000);
 }
 
 function win(arrBlocks){
@@ -24,7 +27,7 @@ function win(arrBlocks){
         const win = showModalWindow();
         const h2 = document.createElement('h2');
         h2.innerText = 'Вы выиграли!';
-        win.append(h2)
+        win.append(h2);
     }
 }
 
