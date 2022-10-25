@@ -1,4 +1,3 @@
-
 const wrapperLetters = document.getElementById('wrapperLetters');
 
 function renderEmptyBlocks(arrOfSplitWord, arrBlocks){
