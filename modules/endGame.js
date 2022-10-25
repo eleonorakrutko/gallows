@@ -1,5 +1,5 @@
 import restart from "./restartGame.js";
-
+import renderFinalPhrase from "./renderFinalePhrase.js";
 const closeButton = document.getElementById('buttonClose');
 const modal = document.getElementById('modal');
 const modalContent = document.getElementById('modalContent');
@@ -15,20 +15,15 @@ function showModalWindow(){
 
 function loose(rightWord) {
     setTimeout(() => {
-        const loose = showModalWindow();
-        const h2 = document.createElement('h2');
-        h2.innerText = `Вы проиграли. Правильное слово - ${rightWord}`;
-        loose.append(h2);
+        renderFinalPhrase(`Вы проиграли. Правильное слово - ${rightWord}`)
     }, 1000);
 }
 
-function win(arrBlocks){
+function win(arrBlocks, rightWord){
     if(arrBlocks.every(block => block.firstChild)){
-        const win = showModalWindow();
-        const h2 = document.createElement('h2');
-        h2.innerText = 'Вы выиграли!';
-        win.append(h2);
+       renderFinalPhrase(`Вы выиграли! Угаданное слово - ${rightWord}`)
     }
 }
 
-export {loose, win}
+export {loose, win, showModalWindow}
+

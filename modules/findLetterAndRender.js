@@ -9,7 +9,7 @@ function findLetterAndRender(splitWord, validate, arrBlocks, arrImgs, objMistake
             splitWord.forEach((letterWord, index) => {
                 if(letterWord === enteredLetter && !arrBlocks[index].firstChild){
                     renderLetter(arrBlocks[index], enteredLetter);
-                    win(arrBlocks)
+                    win(arrBlocks, rightWord)
                 } 
             })
             if(!splitWord.includes(enteredLetter)){
