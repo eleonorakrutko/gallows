@@ -10,15 +10,13 @@ function showModalWindow(){
     return modalContent
 }
 
-function loose(objMistakes, rightWord) {
-    if(objMistakes.mistake === 3){
-        setTimeout(() => {
-            const loose = showModalWindow();
-            const h2 = document.createElement('h2');
-            h2.innerText = `Вы проиграли. Правильное слово - ${rightWord}`;
-            loose.append(h2)
-        }, 1000) 
-    }
+function loose(rightWord) {
+    setTimeout(() => {
+        const loose = showModalWindow();
+        const h2 = document.createElement('h2');
+        h2.innerText = `Вы проиграли. Правильное слово - ${rightWord}`;
+        loose.append(h2)
+    }, 1000) 
 }
 
 function win(arrBlocks){
